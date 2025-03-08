@@ -1,4 +1,4 @@
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
 
 local Window = Rayfield:CreateWindow({
 	Name = "Rayfield Example Window",
@@ -41,5 +41,15 @@ GameTab:CreateToggle({
 	CurrentValue = false,
 	Callback = function(Value)
 		getgenv().Anti_Eyes_Enabled = Value
-	end,
+	end
+})
+
+local NotificationsTab = Window:CreateTab("Notifications", "rewind")
+
+NotificationsTab:CreateToggle({
+	Name = "Monster Spawn Notifications",
+	CurrentValue = false,
+	Callback = function(Value)
+		getgenv().Notifications_Enabled = Value
+	end
 })
